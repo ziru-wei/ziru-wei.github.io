@@ -14,7 +14,7 @@ npm run build:cv
 
 ## 🔤 字体切换
 
-默认使用 **Roboto** 字体渲染。可以通过参数或环境变量切换：
+默认使用 **LaTeX 自带衬线字体** 渲染。可以通过参数或环境变量切换：
 
 ```bash
 # 使用默认 LaTeX 字体
@@ -23,7 +23,7 @@ npm run build:cv
 # 或者
 CV_FONT=default npm run build:cv
 
-# 切回 Roboto（也是默认设置）
+# 切换到 Roboto
 ./scripts/build_cv_pdf.sh --font roboto
 ```
 
@@ -46,4 +46,4 @@ cv.md                                 # Markdown源文件
 ## 🔧 系统要求
 
 - **pandoc** (`brew install pandoc`)
-- **XeLaTeX** (`brew install --cask mactex`)
+- **XeLaTeX / LuaLaTeX** (`brew install --cask mactex`)

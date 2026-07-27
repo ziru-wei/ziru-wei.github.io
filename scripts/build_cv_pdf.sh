@@ -12,7 +12,7 @@ if ! command -v pandoc &> /dev/null; then
 fi
 
 # 允许通过参数或环境变量切换字体
-FONT_CHOICE="${CV_FONT:-roboto}"
+FONT_CHOICE="${CV_FONT:-default}"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -26,7 +26,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         *)
             echo "未知参数: $1"
-            echo "用法: $0 [--font roboto|default]"
+            echo "用法: $0 [--font default|roboto]"
             exit 1
             ;;
     esac
@@ -63,16 +63,16 @@ FONT_CHOICE_LOWER=$(printf '%s' "$FONT_CHOICE" | tr '[:upper:]' '[:lower:]')
 FONT_METADATA_ARG=""
 
 case "$FONT_CHOICE_LOWER" in
-    roboto|"")
+    roboto)
         echo "使用 Roboto 字体渲染..."
         FONT_METADATA_ARG="--metadata=useRoboto:true"
         ;;
-    default|latex)
+    default|latex|"")
         echo "使用默认 LaTeX 字体渲染..."
         ;;
     *)
         echo "未知字体选项: $FONT_CHOICE"
-        echo "可选值: roboto（默认）, default"
+        echo "可选值: default（默认）, roboto"
         exit 1
         ;;
 esac
@@ -110,9 +110,37 @@ fi
 
 PANDOC_ARGS+=(-o "$CV_PDF")
 
-pandoc "${PANDOC_ARGS[@]}"
+run_pandoc_with_engine() {
+    local engine="$1"
+    local args=()
+    local replaced=0
 
-if [ $? -eq 0 ]; then
+    for arg in "${PANDOC_ARGS[@]}"; do
+        if [ "$arg" = "--pdf-engine=lualatex" ] || [ "$arg" = "--pdf-engine=xelatex" ]; then
+            args+=("--pdf-engine=$engine")
+            replaced=1
+        else
+            args+=("$arg")
+        fi
+    done
+
+    if [ "$replaced" -eq 0 ]; then
+        args+=("--pdf-engine=$engine")
+    fi
+
+    pandoc "${args[@]}"
+}
+
+run_pandoc_with_engine "lualatex"
+PANDOC_STATUS=$?
+
+if [ $PANDOC_STATUS -ne 0 ] && command -v xelatex &> /dev/null; then
+    echo "lualatex 构建失败，回退到 xelatex..."
+    run_pandoc_with_engine "xelatex"
+    PANDOC_STATUS=$?
+fi
+
+if [ $PANDOC_STATUS -eq 0 ]; then
     echo "✅ CV PDF 构建成功: $CV_PDF"
     echo "📄 文件大小: $(du -h "$CV_PDF" | cut -f1)"
     

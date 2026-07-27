@@ -30,13 +30,22 @@ BEGIN {
     consecutive_blanks = 0
     dt_content = ""
     in_dt = 0
+    dt_preserve_inline = 0
 }
 
 # 处理<dt>标签 - 记录内容，等待可能的<dd>
-/^[[:space:]]*<dt>([^<]+)<\/dt>[[:space:]]*$/ {
+/^[[:space:]]*<dt>.*<\/dt>[[:space:]]*$/ {
     dt_content = $0
     gsub(/^[[:space:]]*<dt>/, "", dt_content)
     gsub(/<\/dt>[[:space:]]*$/, "", dt_content)
+    dt_preserve_inline = 0
+    if (dt_content ~ /<(strong|b)>.*<\/(strong|b)>/) {
+        dt_preserve_inline = 1
+        gsub(/<strong>/, "**", dt_content)
+        gsub(/<\/strong>/, "**", dt_content)
+        gsub(/<b>/, "**", dt_content)
+        gsub(/<\/b>/, "**", dt_content)
+    }
     in_dt = 1
     next
 }
@@ -48,12 +57,17 @@ BEGIN {
         dd_content = $0
         gsub(/^[[:space:]]*<dd>/, "", dd_content)
         gsub(/<\/dd>[[:space:]]*$/, "", dd_content)
-        print "\n**" dt_content "** \\hfill " dd_content
+        if (dt_preserve_inline == 1) {
+            print "\n" dt_content " \\hfill " dd_content
+        } else {
+            print "\n**" dt_content "** \\hfill " dd_content
+        }
         # 直接进入缩进模式
         indent_mode = 1
         print ""
         in_dt = 0
         dt_content = ""
+        dt_preserve_inline = 0
     } else {
         # 单独的dd，直接处理
         dd_content = $0
@@ -69,10 +83,15 @@ BEGIN {
 
 # 如果遇到其他内容但还有未处理的dt，输出单独的dt（需要空行）
 in_dt == 1 && !/^[[:space:]]*$/ && !/^[[:space:]]*<dd>/ {
-    print "\n**" dt_content "**"
+    if (dt_preserve_inline == 1) {
+        print "\n" dt_content
+    } else {
+        print "\n**" dt_content "**"
+    }
     print ""  # 添加空行
     in_dt = 0
     dt_content = ""
+    dt_preserve_inline = 0
     # 继续处理当前行
 }
 

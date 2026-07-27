@@ -1,51 +1,61 @@
 # Ziru Wei  ｜ 魏子茹
 
+Keywords: Human-Computer Interaction; Human-Robot Interaction; Adaptive Interaction; Everyday AI Interface
+
+## Research Interests
+My research explores next-generation AI interfaces designed to augment humans undisruptively in everyday physical environments. I develop medium-agnostic and context-adaptive systems spanning modalities from extended reality to robotic interfaces, and investigate how humans perceive them.
+
 ## Education
 
-**Carnegie Mellon University** \hfill May 2026
+**ATLAS Institute, University of Colorado Boulder** \hfill Starting Fall 2026
 
-- Master of Science in Computational Design (research-based), GPA: 4.14/4.33
-
-- Thesis Topic: *Toward Interacting with Proactive Intelligence in Everyday Physical Environments* (Advised by Prof. Alexandra Ion)
-
-- Selected Courseworks: 05-899 Computational Methods for Interactive Systems, 15-112 Fundamentals of Computer Science, 05-610 User-Centered Research and Evaluation, 15-387 Computational Perception,  05-899 Interactive Extended Reality
+- PhD in Creative Technology and Design
+- Advisor: Prof. Ryo Suzuki
 
 
-**Soochow University** \hfill Jun 2024
+**Carnegie Mellon University** \hfill Graduated May 2026
+
+- Master of Science in Computational Design (research-based), GPA: 3.95/4.33
+
+- Advisor: Prof. Alexandra Ion
+
+- Thesis Project: *Toward Interacting with Proactive Intelligence in Everyday Physical Environments*
+
+
+**Soochow University** \hfill Graduated Jun 2024
 
 - Bachelor of Architecture, GPA: 3.7/4.0
 
 
 ## Research Works
-**\textnormal{[R1]} (Ongoing) ROchestrator: Steering Proactive Robot Behavior via Task-Aware Interruptibility Estimation**
+**\textnormal{[R1]} (In submission) While You're Stil Busy: Context-Aware Approach Optimization for Proactive Mobile Robots**
 
-\underline{Ziru Wei}, Alexandra Ion
+\underline{Ziru Wei}, Di Wen, Leyuan Chen, Hassan Shahzad, Alexandra Ion
 
 **\textnormal{[R2]} (In submission) “Let Me Lend You a Hand”: Understanding Contextual Perceptions of Physical Proactivity in Small-Scale Personal Assistance Robots**
 
 \underline{Ziru Wei}, Violet Yinuo Han, Tanvi Handoo, Alexandra Ion
 
-**\textnormal{[R3]} (In submission) Embodiment and Interaction Influence Perceptions of Robotic Collaborators in Everyday Physical Tasks**
+**\textnormal{[R3]} Objects with Arms: How Task-Relevant Embodiment Shapes Perception in Physical Collaboration**
 
 Violet Yinuo Han, \underline{Ziru Wei}, Aiden Yiliu Li, Chris Wu, Alexandra Ion
+*IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)*, 2026 (full paper accepted)
 
 **\textnormal{[R4]} Embodied Generative Taskscape: Re-Connect Cultural-Ecological Perception in 5-Animal Play**
 
-\underline{Ziru Wei}, Jimmy Cheng. Abstract accepted to the *50th Annual Meeting of the Society for Social Studies of Science (4S 2025)*, Seattle, WA, Sept 3–6, 2025.
+\underline{Ziru Wei}, Jimmy Cheng. *50th Annual Meeting of the Society for Social Studies of Science (4S)*, 2025 (abstract accepted)
 
 **\textnormal{[R5]} On-site Holographic Building Construction: A Case Study of Aurora**
 
-Sijie Liu, \underline{Ziru Wei}, Sining Wang. *Proceedings of the Association for Computer-Aided Architectural Design Research in Asia (CAADRIA)*, 2022 (peer-reviewed, ~30% acceptance, top-tier computational design conference)
+Sijie Liu, \underline{Ziru Wei}, Sining Wang. *Proceedings of the Association for Computer-Aided Architectural Design Research in Asia (CAADRIA)*, 2022 (full paper accepted, ~30% acceptance, peer-reviewed, top-tier conference in computational design)
 
 ## Research Experiences
 
-**Research Student | Interactive Structures Lab, Human-Computer Interaction Institute, School of Computer Science, Carnegie Mellon University** \hfill Mar 2025 - Present
+**Master's Student | Interactive Structures Lab, Carnegie Mellon University** \hfill Mar 2025 - Present
 
 - Advisor: Prof. Alexandra Ion
 
-- Developing a computational system for task-aware interruptibility estimation; leveraging multimodal LLMs to infer urgency, importance, and semantic relevance of robot goals relative to user activity; optimize robot interruption timing, trajectory, and notification details in high-stakes environments (See R1)
-- Led a Wizard-of-Oz study (N=15) examining user perception of proactive robots; designed a 2×3 experiment (proactivity type × level) across 3 environments; mixed-methods analysis revealed environment and proactivity type shape perceived helpfulness and distraction; articulated design implications around privacy, agency, and trust (See R2)
-- Contributed to a human-robot interaction study investigating the interplay between robotic arm mounting formats and assistance initiative levels (See R3)
+- Developed software and hardware systems for proactive robotic interfaces that blended into everyday environments, and understood human perceptions of them (See R1, R2, R3).
 
 
 
@@ -62,24 +72,6 @@ Sijie Liu, \underline{Ziru Wei}, Sining Wang. *Proceedings of the Association fo
 
 - Designed MR workflows and four on-site collaboration methods for nonlinear façade assembly with limited devices and a small construction team; documented the design-to-construction process and contributed to the literature review part in paper writing (See R5)
 
-
-## Skills
-
-**Technical**
-
-- Hardware: Arduino, Raspberry Pi
-- Programming: Python, PyTorch, Rstudio, C#, Pascal, HTML, CSS, JavaScript
-
-
-**Design & Production**
-
-- Software: Unity, Rhino, Grasshopper with GHPython, Blender, AutoCAD, Adobe Creative Suite, Figma, Procreate
-- Fabrication: 3D printing, Soldering and electronic wiring, Welding (basic), Woodworking
-
-
-**Languages**
-
-- English (Fluent), Mandarin (Native), Portuguese (Beginner)
 
 ## Awards and Honors
 
@@ -118,20 +110,34 @@ Sijie Liu, \underline{Ziru Wei}, Sining Wang. *Proceedings of the Association fo
 **METTLER TOLEDO Scholarship (Top 2%) ** \hfill 2019
 
 
+## Mentoring
+
+**Tanvi Handoo**, Undergraduate Student in Computer Science, Carnegie Mellon University \hfill May 2025 - Sept 2025
+
+
 ## Activities
 
-**Course Guest Reviewer | 62-275 Fundamentals of Computational Design in 25 Spring, Carnegie Mellon University** \hfill Jan 2025 - May 2025
-
-- Provided feedback on team-based computational design projects for over 50 students
+**Course Guest Reviewer, Carnegie Mellon University** \hfill Jan 2025 - May 2025
 
 
 
-**Student Volunteer | des[AI]gn conference 2024, American Institute of Architecture Students** \hfill Oct 2024
-
-- Assisted in workshop setup, documented the sessions through photography, and facilitated the use of interactive swatch-making software for creating knit samples in Textiles Lab, Carnegie Mellon University
-- Coordinated logistics and facilitated the setup for an AI panel discussion and the opening session of the conference
+**Student Volunteer, des[AI]gn conference 2024, American Institute of Architecture Students** \hfill Oct 2024
 
 
-**Design Exhibition Curatorial Assistant | Soochow University** \hfill May 2021
+## Skills
 
-- Organized featured models and drawings for the exhibition, assisting in the re-arrangement of the architecture department's showcase
+**Technical**
+
+- Hardware: Arduino, Raspberry Pi
+- Programming: Python, PyTorch, Rstudio, C#, Pascal, HTML, CSS, JavaScript
+
+
+**Design & Production**
+
+- Software: Unity, Rhino, Grasshopper with GHPython, Blender, AutoCAD, Adobe Creative Suite, Figma, Procreate
+- Fabrication: 3D printing, Soldering and electronic wiring, Welding (basic), Woodworking
+
+
+**Languages**
+
+- English (Fluent), Mandarin (Native), Portuguese (Beginner)

@@ -50,6 +50,8 @@ $endif$
 
 % Configure heading levels: H1 minimal, H2 as main sections
 \setcounter{secnumdepth}{0}
+\newif\iffirstcvsubsection
+\firstcvsubsectiontrue
 
 % Suppress H1 from markdown to avoid duplicate title
 \renewcommand{\section}[1]{}
@@ -60,7 +62,12 @@ $endif$
     \noindent{\large\textsc{#1}}%
     \vspace{0.1em}%
     \hrule%
-    \vspace{0em}%
+    \iffirstcvsubsection
+        \vspace{1.2em}%
+        \global\firstcvsubsectionfalse
+    \else
+        \vspace{0em}%
+    \fi
 }
 
 % H3 (\subsubsection) - smaller subsections if needed
@@ -130,10 +137,10 @@ $endif$
 \begin{center}
     {\fontsize{20}{24}\selectfont\bfseries Ziru Wei}\\[5pt]
         {\large
-          \href{mailto:ziruw@andrew.cmu.edu}{ziruw@andrew.cmu.edu} \,|\, 
+          \href{mailto:ziru.wei@colorado.edu}{ziru.wei@colorado.edu} \,|\, 
           \href{https://zuriniw.github.io}{zuriniw.github.io}
         }\\[8pt]
-    \end{center}
+\end{center}
 \vspace{0.25em}
 
 % \noindent{ \textbf{Research Interest:} Bringing AI capabilities into everyday physical environments to augment human abilities and cognition}\\[4pt]
