@@ -132,7 +132,7 @@ const projects = [
     }),
     new Project({
         name: "objectLimb",
-        title: "Embodiment and Interaction Influence Perceptions of Robotic Collaborators in Everyday Physical Tasks",
+        title: "Objects with Arms: How Task-Relevant Embodiment Shapes Perception in Physical Collaboration",
         time: "2025",
         isteam: true,
         weight: 10,

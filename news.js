@@ -21,13 +21,9 @@ function parseTime(timeStr) {
 
 const newsItems = [
     new NewsItem({
-        time: "2025.09",
-        event: `★ We submitted <b>2 </b>papers to <b>CHI 2026</b>! Fingers crossed.`,
+        time: "2026.04",
+        event: `★ I will join <a href="https://www.colorado.edu/atlas/programmable-reality-lab" class="news-link">Programmable Reality Lab</a> as a PhD student in Fall 2026. Excited to move to Boulder!`,
 
-    }),
-    new NewsItem({
-        time: "2025.11",
-        event: `I won the Fastest Manipulation Prize in CMU <a href="https://www.hcii.cmu.edu/course/special-topics-interactive-extended-reality-not-offered-spring-2026" class="news-link">05-899 Interactive Extended Reality</a> taught by Prof. David Lindlbauer` 
     }),
     new NewsItem({
         time: "2025.08",
@@ -36,10 +32,6 @@ const newsItems = [
     new NewsItem({
         time: "2025.06",
         event: `Spring 2025 <b>Computational Design Commendation</b> for outstanding academic achievements at CMU`,
-    }),
-    new NewsItem({
-        time: "2025.03",
-        event: `An abstract has been accepted to 4S 2025 Conference Panel, September 3-6, 2025 in Seattle, WA.`,
     }),
     new NewsItem({
         time: "2025.01",

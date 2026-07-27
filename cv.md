@@ -1,6 +1,6 @@
 # Ziru Wei  ｜ 魏子茹
 
-Keywords: Human-Computer Interaction; Human-Robot Interaction; Adaptive Interaction; Everyday AI Interface
+Keywords: Human-Computer Interaction; Human-Robot Interaction; Adaptive Interface
 
 ## Research Interests
 
@@ -21,7 +21,7 @@ Advisor: Prof. Ryo Suzuki
     <dd>Graduated May 2026</dd>
 </dl>
 
-Master of Science in Computational Design (research-based), GPA: 3.95/4.33  
+Master of Science in Computational Design (research-based)
 
 Advisor: Prof. Alexandra Ion
 
@@ -33,7 +33,7 @@ Thesis Project: *Toward Interacting with Proactive Intelligence in Everyday Phys
     <dd>Graduated Jun 2024</dd>
 </dl>
 
-Bachelor of Architecture, GPA: 3.7/4.0
+Bachelor of Architecture
 
 
 ## Research Works

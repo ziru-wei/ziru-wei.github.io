@@ -1,6 +1,6 @@
 # Ziru Wei  ｜ 魏子茹
 
-Keywords: Human-Computer Interaction; Human-Robot Interaction; Adaptive Interaction; Everyday AI Interface
+Keywords: Human-Computer Interaction; Human-Robot Interaction; Adaptive Interface
 
 ## Research Interests
 My research explores next-generation AI interfaces designed to augment humans undisruptively in everyday physical environments. I develop medium-agnostic and context-adaptive systems spanning modalities from extended reality to robotic interfaces, and investigate how humans perceive them.
@@ -15,7 +15,7 @@ My research explores next-generation AI interfaces designed to augment humans un
 
 **Carnegie Mellon University** \hfill Graduated May 2026
 
-- Master of Science in Computational Design (research-based), GPA: 3.95/4.33
+- Master of Science in Computational Design (research-based)
 
 - Advisor: Prof. Alexandra Ion
 
@@ -24,7 +24,7 @@ My research explores next-generation AI interfaces designed to augment humans un
 
 **Soochow University** \hfill Graduated Jun 2024
 
-- Bachelor of Architecture, GPA: 3.7/4.0
+- Bachelor of Architecture
 
 
 ## Research Works
