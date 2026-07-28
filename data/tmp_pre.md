@@ -17,7 +17,7 @@
 
 
 ## Research Works
-[R1] **(ongoing) ROchestrator: Steering Proactive Robot Behavior via Task-Aware Interruptibility Estimation**
+[R1] **(In submission) ROchestrator: Steering Proactive Robot Behavior via Task-Aware Interruptibility Estimation**
 \underline{Ziru Wei}, Alexandra Ion
 
 [R2] **(In submission) “Let Me Lend You a Hand”: Understanding Contextual Perceptions of Physical Proactivity in Small-Scale Personal Assistance Robots**

@@ -1,6 +1,6 @@
 # Ziru Wei  ｜ 魏子茹
 
-Keywords: Human-Computer Interaction; Human-Robot Interaction; Adaptive Interface
+Keywords: Human-Computer Interaction; Human-Robot Interaction; Context-Aware Interaction
 
 ## Research Interests
 

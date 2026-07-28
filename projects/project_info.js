@@ -128,7 +128,6 @@ const projects = [
         isResearch: true,
         author: "Ziru Wei, Violet Yinuo Han, Tanvi Handoo, Alexandra Ion",
         venue: "In submission",
-        researchType: ["Interactivity"],
     }),
     new Project({
         name: "objectLimb",
@@ -140,7 +139,6 @@ const projects = [
         isResearch: true,
         author: "Violet Yinuo Han, Ziru Wei, Aiden Yiliu Li, Chris Wu, Alexandra Ion",
         venue: "In submission",
-        researchType: ["Integration", "Interactivity"],
     }),
     new Project({
         name: "ROrchestrator",
@@ -150,9 +148,8 @@ const projects = [
         weight: 12,
         otherLink2: null,
         isResearch: true,
-        author: "Ziru Wei, Alexandra Ion",
-        venue: "Ongoing research project",
-        researchType: ["Interactivity","Integration"],
+        author: "Ziru Wei, Di Wen, Leyuan Chen, Hassan Shahzad, Alexandra Ion",
+        venue: "In submission",
     }),
     new Project({
         name: "seeingsaw",
