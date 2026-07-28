@@ -1,6 +1,6 @@
 # Ziru Wei  ｜ 魏子茹
 
-Keywords: Human-Computer Interaction; Human-Robot Interaction; Adaptive Interface
+Keywords: Human-Computer Interaction; Human-Robot Interaction; Context-Aware Interaction
 
 ## Research Interests
 My research explores next-generation AI interfaces designed to augment humans undisruptively in everyday physical environments. I develop medium-agnostic and context-adaptive systems spanning modalities from extended reality to robotic interfaces, and investigate how humans perceive them.
