@@ -7,7 +7,7 @@ My research explores next-generation AI interfaces designed to augment humans un
 
 ## Education
 
-**ATLAS Institute, University of Colorado Boulder** \hfill Starting Fall 2026
+**The ATLAS Institute, University of Colorado Boulder** \hfill Starting Fall 2026
 
 - PhD in Creative Technology and Design
 - Advisor: Prof. Ryo Suzuki

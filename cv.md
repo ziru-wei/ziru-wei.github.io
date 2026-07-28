@@ -9,7 +9,7 @@ My research explores next-generation AI interfaces designed to augment humans un
 ## Education
 
 <dl>
-    <dt>ATLAS Institute, University of Colorado Boulder</dt>
+    <dt>The ATLAS Institute, University of Colorado Boulder</dt>
     <dd>Starting Fall 2026</dd>
 </dl>
 
