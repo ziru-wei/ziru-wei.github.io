@@ -27,6 +27,17 @@ $if(useRoboto)$
     BoldItalicFeatures={RawFeature={+wght=700}}
 ]
 % Roboto is now the main font for the PDF output
+$elseif(useTgPagella)$
+% Palatino-style font from TeX Gyre, with real bold/italic variants.
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{TeXGyrePagella}[
+    Path={/usr/local/texlive/2024basic/texmf-dist/fonts/opentype/public/tex-gyre/},
+    UprightFont={texgyrepagella-regular.otf},
+    BoldFont={texgyrepagella-bold.otf},
+    ItalicFont={texgyrepagella-italic.otf},
+    BoldItalicFont={texgyrepagella-bolditalic.otf}
+]
 $else$
 % Default LaTeX font (Computer Modern) will be used
 $endif$

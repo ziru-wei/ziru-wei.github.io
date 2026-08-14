@@ -28,24 +28,20 @@ My research explores next-generation AI interfaces designed to augment humans un
 
 
 ## Publications
-**\textnormal{[P1]} While You're Stil Busy: Context-Aware Approach Optimization for Proactive Mobile Robots**
+**\textnormal{[P3]} While You're Stil Busy: Context-Aware Approach Optimization for Proactive Mobile Robots**
 
 \underline{Ziru Wei}, Di Wen, Leyuan Chen, Hassan Shahzad, Alexandra Ion
-*ACM Symposium on User Interface Software and Technology*, 2026 (full paper accepted)
-
+*UIST'26* (ACM Symposium on User Interface Software and Technology, 2026), full paper accepted
 
 **\textnormal{[P2]} Objects with Arms: How Task-Relevant Embodiment Shapes Perception in Physical Collaboration**
 
 Violet Yinuo Han, \underline{Ziru Wei}, Aiden Yiliu Li, Chris Wu, Alexandra Ion
-*IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)*, 2026 (full paper accepted)
+*RO-MAN'26* (IEEE International Conference on Robot and Human Interactive Communication, 2026), full paper accepted
 
-**\textnormal{[P3]} Embodied Generative Taskscape: Re-Connect Cultural-Ecological Perception in 5-Animal Play**
+**\textnormal{[P1]} On-site Holographic Building Construction: A Case Study of Aurora**
 
-\underline{Ziru Wei}, Jimmy Cheng. *50th Annual Meeting of the Society for Social Studies of Science (4S)*, 2025 (abstract accepted)
-
-**\textnormal{[P4]} On-site Holographic Building Construction: A Case Study of Aurora**
-
-Sijie Liu, \underline{Ziru Wei}, Sining Wang. *Proceedings of the Association for Computer-Aided Architectural Design Research in Asia (CAADRIA)*, 2022 (full paper accepted, ~30% acceptance, peer-reviewed, top-tier conference in computational design)
+Sijie Liu, \underline{Ziru Wei}, Sining Wang.
+*CAADRIA'22* (Proceedings of the Association for Computer-Aided Architectural Design Research in Asia, 2022) full paper accepted (~30% acceptance, top-tier conference in computational design)
 
 ## Research Experiences
 
@@ -53,7 +49,7 @@ Sijie Liu, \underline{Ziru Wei}, Sining Wang. *Proceedings of the Association fo
 
 - Advisor: Prof. Alexandra Ion
 
-- Developed software and hardware systems for proactive robotic interfaces that blended into everyday environments, and understood human perceptions of them (See R1, R2, R3).
+- Developed software and hardware systems for proactive robotic interfaces that blended into everyday environments, and understood human perceptions of them (See P2, P3).
 
 
 
@@ -68,7 +64,7 @@ Sijie Liu, \underline{Ziru Wei}, Sining Wang. *Proceedings of the Association fo
 
 - Advisor: Prof. Sining Wang
 
-- Designed MR workflows and four on-site collaboration methods for nonlinear façade assembly with limited devices and a small construction team; documented the design-to-construction process and contributed to the literature review part in paper writing (See R5)
+- Designed MR workflows and four on-site collaboration methods for nonlinear façade assembly with limited devices and a small construction team; documented the design-to-construction process and contributed to the literature review part in paper writing (See P1)
 
 
 ## Awards and Honors

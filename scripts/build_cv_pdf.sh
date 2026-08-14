@@ -12,7 +12,7 @@ if ! command -v pandoc &> /dev/null; then
 fi
 
 # 允许通过参数或环境变量切换字体
-FONT_CHOICE="${CV_FONT:-default}"
+FONT_CHOICE="${CV_FONT:-palatino}"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -26,7 +26,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         *)
             echo "未知参数: $1"
-            echo "用法: $0 [--font default|roboto]"
+            echo "用法: $0 [--font default|roboto|palatino]"
             exit 1
             ;;
     esac
@@ -67,12 +67,16 @@ case "$FONT_CHOICE_LOWER" in
         echo "使用 Roboto 字体渲染..."
         FONT_METADATA_ARG="--metadata=useRoboto:true"
         ;;
+    palatino)
+        echo "使用 TeX Gyre Pagella 字体渲染..."
+        FONT_METADATA_ARG="--metadata=useTgPagella:true"
+        ;;
     default|latex|"")
         echo "使用默认 LaTeX 字体渲染..."
         ;;
     *)
         echo "未知字体选项: $FONT_CHOICE"
-        echo "可选值: default（默认）, roboto"
+        echo "可选值: default（默认）, roboto, palatino"
         exit 1
         ;;
 esac

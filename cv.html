@@ -45,8 +45,9 @@
                 const markdownDiv = document.getElementById('markdown-content');
                 let htmlContent = marked.parse(mdContent);
                 
-                // 将 \textnormal{[R1]} 等 LaTeX 语法替换为 [R1]
-                htmlContent = htmlContent.replace(/\\textnormal\{(\[R\d+\])\}/g, '$1');
+                // 将 \textnormal{[P1]} / \textnormal{[R1]} 等 LaTeX 语法替换为 [P1] / [R1]
+                htmlContent = htmlContent.replace(/\\textnormal\{(\[[A-Z]\d+\])\}/g, '$1');
+                htmlContent = htmlContent.replace(/\\underline\{([^}]+)\}/g, '<u>$1</u>');
                 
                 markdownDiv.innerHTML = htmlContent;
 

@@ -14,17 +14,21 @@ npm run build:cv
 
 ## 🔤 字体切换
 
-默认使用 **LaTeX 自带衬线字体** 渲染。可以通过参数或环境变量切换：
+默认使用 **TeX Gyre Pagella（Palatino 风格）** 渲染。可以通过参数或环境变量切换：
 
 ```bash
-# 使用默认 LaTeX 字体
-./scripts/build_cv_pdf.sh --font default
-
-# 或者
-CV_FONT=default npm run build:cv
+# 使用默认字体
+npm run build:cv
 
 # 切换到 Roboto
 ./scripts/build_cv_pdf.sh --font roboto
+
+# 使用 TeX Gyre Pagella（Palatino 风格，含真实 bold/italic 字重）
+./scripts/build_cv_pdf.sh --font palatino
+
+# 切回 LaTeX 默认字体
+./scripts/build_cv_pdf.sh --font default
+
 ```
 
 ## 📁 文件结构
