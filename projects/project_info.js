@@ -138,18 +138,18 @@ const projects = [
         otherLink2: null,
         isResearch: true,
         author: "Violet Yinuo Han, Ziru Wei, Aiden Yiliu Li, Chris Wu, Alexandra Ion",
-        venue: "In submission",
+        venue: " RO-MAN'26 (IEEE International Conference on Robot and Human Interactive Communication) full paper accepted",
     }),
     new Project({
-        name: "ROrchestrator",
-        title: "ROrchestrator",
-        time: "2025",
+        name: "proach",
+        title: "While You're Still Busy: Context-Aware Approach Optimization for Proactive Mobile Robots",
+        time: "2026",
         isteam: true,
         weight: 12,
         otherLink2: null,
         isResearch: true,
         author: "Ziru Wei, Di Wen, Leyuan Chen, Hassan Shahzad, Alexandra Ion",
-        venue: "In submission",
+        venue: "UIST'26 (ACM Symposium on User Interface Software and Technology) full paper accepted",
     }),
     new Project({
         name: "seeingsaw",
@@ -250,7 +250,7 @@ const projects = [
         ismarkdown: true,
         situate: { x: 70, y: -85 },
         category: "Blended Environment",
-        venue: "CAADRIA 2022 (~30%, Top-tier Computational Design Conference)",
+        venue: "CAADRIA'22 (Computer-Aided Architectural Design Research in Asia) (~30%, Top-tier Computational Design Conference) full paper accepted",
         isResearch: true
     }),
     // new Project({
