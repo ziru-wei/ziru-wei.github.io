@@ -21,6 +21,11 @@ function parseTime(timeStr) {
 
 const newsItems = [
     new NewsItem({
+        time: "2026.08",
+        event: `★ I'll be presenting PROACH at UIST'26. This is my first first-author paper :)`,
+
+    }),
+    new NewsItem({
         time: "2026.04",
         event: `★ I will join <a href="https://www.colorado.edu/atlas/programmable-reality-lab" class="news-link">Programmable Reality Lab</a> as a PhD student in Fall 2026. Excited to move to Boulder!`,
 

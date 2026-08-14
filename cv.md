@@ -36,23 +36,27 @@ Thesis Project: *Toward Interacting with Proactive Intelligence in Everyday Phys
 Bachelor of Architecture
 
 
-## Research Works
-**\textnormal{[R1]} (In submission) While You're Stil Busy: Context-Aware Approach Optimization for Proactive Mobile Robots**
-<u>Ziru Wei</u>, Di Wen, Leyuan Chen, Hassan Shahzad, Alexandra Ion
+## Publications
+**\textnormal{[P1]} While You're Stil Busy: Context-Aware Approach Optimization for Proactive Mobile Robots**
+
+\underline{Ziru Wei}, Di Wen, Leyuan Chen, Hassan Shahzad, Alexandra Ion
+*UIST'26* (ACM Symposium on User Interface Software and Technology, 2026), full paper accepted
 
 
-**\textnormal{[R2]} (In submission) “Let Me Lend You a Hand”: Understanding Contextual Perceptions of Physical Proactivity in Small-Scale Personal Assistance Robots**  
-<u>Ziru Wei</u>, Violet Yinuo Han, Tanvi Handoo, Alexandra Ion  
+**\textnormal{[P2]} Objects with Arms: How Task-Relevant Embodiment Shapes Perception in Physical Collaboration**
 
-**\textnormal{[R3]} Objects with Arms: How Task-Relevant Embodiment Shapes Perception in Physical Collaboration**  
-Violet Yinuo Han, <u>Ziru Wei</u>, Aiden Yiliu Li, Chris Wu, Alexandra Ion
-*IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)*, 2026 (full paper accepted)
+Violet Yinuo Han, \underline{Ziru Wei}, Aiden Yiliu Li, Chris Wu, Alexandra Ion
+*RO-MAN'26* (IEEE International Conference on Robot and Human Interactive Communication, 2026), full paper accepted
 
-**\textnormal{[R4]} Embodied Generative Taskscape: Re-Connect Cultural-Ecological Perception in 5-Animal Play**  
-<u>Ziru Wei</u>, Jimmy Cheng. *50th Annual Meeting of the Society for Social Studies of Science (4S)*, 2025 (abstract accepted)
+**\textnormal{[P3]} Embodied Generative Taskscape: Re-Connect Cultural-Ecological Perception in 5-Animal Play**
 
-**\textnormal{[R5]} On-site Holographic Building Construction: A Case Study of Aurora**  
-Sijie Liu, <u>Ziru Wei</u>, Sining Wang. *Proceedings of the Association for Computer-Aided Architectural Design Research in Asia (CAADRIA)*, 2022 (full paper accepted, ~30% acceptance, peer-reviewed, top-tier conference in computational design)
+\underline{Ziru Wei}, Jimmy Cheng. 
+*4S'25* (50th Annual Meeting of the Society for Social Studies of Science, 2025) abstract accepted
+
+**\textnormal{[P4]} On-site Holographic Building Construction: A Case Study of Aurora**
+
+Sijie Liu, \underline{Ziru Wei}, Sining Wang. 
+*CAADRIA'22* (Proceedings of the Association for Computer-Aided Architectural Design Research in Asia, 2022) full paper accepted (~30% acceptance, top-tier conference in computational design)
 
 
 ## Research Experiences  
