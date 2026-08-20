@@ -2,6 +2,7 @@
 
 /* CV PDF Download Button Styles */
 .cv-download-section {
+    display: none;
     text-align: left;
     margin: 1.5rem 0;
     padding: 1rem 0;
@@ -949,10 +950,6 @@ body::-webkit-scrollbar {
     }
 
     .news-section {
-        display: none;
-    }
-
-    .news-column .cv-section {
         display: none;
     }
 
