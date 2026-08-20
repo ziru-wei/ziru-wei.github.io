@@ -279,7 +279,7 @@ body::-webkit-scrollbar {
     color: var(--color-text);
     margin: 0;
     line-height: 1.2;
-    font-weight: 300;
+    font-weight: 350;
     text-align: left;
     padding: 0;
     width: 100%;
@@ -323,7 +323,7 @@ body::-webkit-scrollbar {
 .intro > ul {
     margin: 0;
     padding-left: 64px; /* 圆点和文字整体右移 */
-    font-weight: 400;
+    font-weight: 350;
     /* color: #6c757d; */
 }
 
@@ -406,7 +406,7 @@ body::-webkit-scrollbar {
     color: var(--color-text);
     transition: all 0.1s ease;
     font-family: "Roboto", sans-serif !important;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.4px;
     text-decoration: none;
     padding: 1px 4px;
@@ -486,6 +486,11 @@ body::-webkit-scrollbar {
     align-items: stretch;
 }
 
+.research-card .carousel-project-image {
+    flex-basis: 288px;
+    height: 162px;
+}
+
 
 .research-card-meta {
     display: flex;
@@ -498,13 +503,14 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    flex: 1;
     margin-top: 4px;
     padding-left: 22px;
 }
 
 .research-card-author {
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
+    font-weight: 350;
     font-size: 13px;
     line-height: 1.3;
     color: var(--color-text);
@@ -517,10 +523,15 @@ body::-webkit-scrollbar {
 
 .research-card-venue {
     font-family: "Roboto", sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.3;
     color: var(--color-text);
     font-weight: 600;
+    margin-top: auto;
+}
+
+.research-card-venue-note {
+    font-weight: 350;
 }
 
 .research-card-links,
@@ -646,7 +657,7 @@ body::-webkit-scrollbar {
 .carousel-category-name {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 350;
     color: var(--color-text);
     text-align: center;
     max-width: 150px;
@@ -714,7 +725,7 @@ body::-webkit-scrollbar {
 .carousel-project-title {
     font-family: "Roboto", sans-serif;
     font-size: clamp(13px, 2.6vw, 15px);
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-text);
     margin: 0;
     transition: color 0.1s ease;
@@ -760,7 +771,7 @@ body::-webkit-scrollbar {
     display: inline-block;
     line-height: 1.1;
     flex: 1 1 auto;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
 }
 
@@ -783,7 +794,7 @@ body::-webkit-scrollbar {
 .carousel-project-subtitle {
     font-family: "Roboto", sans-serif;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 350;
     color: var(--color-text);
     line-height: 1.2;
     transition: color 0.1s ease;
@@ -938,9 +949,11 @@ body::-webkit-scrollbar {
     }
 
     .news-section {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
+        display: none;
+    }
+
+    .news-column .cv-section {
+        display: none;
     }
 
     /* 显示mobile column view，隐藏desktop carousel和about section */
@@ -949,6 +962,10 @@ body::-webkit-scrollbar {
     }
 
     .column-view {
+        display: none;
+    }
+
+    .column-view.is-open {
         display: block;
     }
 
@@ -957,19 +974,86 @@ body::-webkit-scrollbar {
     }
 
     .intro-wrapper {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     .intro-image {
         width: 100%;
     }
 
-    .projects-heading {
+    .projects-column .projects-heading {
         align-self: stretch;
         width: 100%;
         max-width: 760px;
-        padding: 0 16px 4px 16px !important;
+        padding: 0 8px 4px 8px !important;
         box-sizing: border-box;
+    }
+
+    .archive-heading {
+        padding-left: 8px !important;
+    }
+
+    .archive-toggle {
+        cursor: pointer;
+        position: relative;
+    }
+
+    .archive-toggle .archive-toggle-triangle {
+        display: inline-block;
+        position: absolute;
+        left: -13px;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 7px solid currentColor;
+        transform-origin: center;
+        transform: translateY(-50%);
+        transition: transform 0.12s ease;
+    }
+
+    .archive-toggle[aria-expanded="true"] .archive-toggle-triangle {
+        transform: translateY(-50%) rotate(90deg);
+    }
+
+    .projects-column .mobile-news-section {
+        display: block;
+        width: 100%;
+        max-width: 760px;
+        margin: 0 0 32px 0;
+        padding: 0;
+    }
+
+    .mobile-news-section .news-heading {
+        padding: 0 8px 4px 8px !important;
+    }
+
+    .mobile-news-section .news-item {
+        padding: 12px 8px;
+    }
+
+    .research-card .carousel-project-image {
+        flex: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .research-card {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 8px;
+    }
+
+    .research-card-details {
+        padding-left: 22px;
+        min-height: 0;
+    }
+
+    .research-card-venue {
+        margin-top: 8px;
     }
 }
 
@@ -1245,7 +1329,7 @@ body::-webkit-scrollbar {
 
 .about-heading {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     font-style: italic;
     letter-spacing: 0.05em;
     color: var(--color-text);
@@ -1312,6 +1396,7 @@ body::-webkit-scrollbar {
     margin: 0;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
+    font-weight: 350;
     line-height: 1.4;
 }
 
@@ -1335,6 +1420,7 @@ body::-webkit-scrollbar {
 .about-name {
     padding-left: 0 !important;
     font-size: 22px !important;
+    font-weight: 600;
 }
 
 .about-link {
@@ -1352,7 +1438,7 @@ body::-webkit-scrollbar {
 
 .projects-heading {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     font-style: italic;
     letter-spacing: 0.05em;
     color: var(--color-text);
@@ -1371,6 +1457,25 @@ body::-webkit-scrollbar {
     transform: translateY(-1px);
 }
 
+.archive-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-style: inherit;
+    letter-spacing: inherit;
+    padding: 0;
+    cursor: default;
+}
+
+.archive-toggle-triangle {
+    display: none;
+}
+
 /* ============================================
    News Section Styles
    ============================================ */
@@ -1385,9 +1490,13 @@ body::-webkit-scrollbar {
     background-color: var(--color-background);
 }
 
+.mobile-news-section {
+    display: none;
+}
+
 .news-heading {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     font-style: italic;
     letter-spacing: 0.05em;
     color: var(--color-text);

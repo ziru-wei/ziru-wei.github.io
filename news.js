@@ -27,7 +27,7 @@ const newsItems = [
     }),
     new NewsItem({
         time: "2026.04",
-        event: `★ I will join <a href="https://www.colorado.edu/atlas/programmable-reality-lab" class="news-link">Programmable Reality Lab</a> as a PhD student in Fall 2026. Excited to move to Boulder!`,
+        event: `★ I will join <a href="https://www.colorado.edu/atlas/programmable-reality-lab" class="news-link">Programmable Reality Lab</a> as a PhD student in Fall 2026. Excited to move to Boulder ▲▲▲`,
 
     }),
     new NewsItem({
@@ -55,26 +55,42 @@ const newsItems = [
 
 function createNewsItems() {
     const container = document.querySelector('.news-container');
+    const mobileContainer = document.querySelector('.mobile-news-container');
     // sort by time (from new to old)
     const sortedItems = [...newsItems].sort((a, b) => {
         const dateA = parseTime(a.time);
         const dateB = parseTime(b.time);
         return dateB - dateA;
     });
-    
-    sortedItems.forEach(item => {
+
+    const renderNewsItem = (item) => {
         const newsElement = document.createElement('div');
         newsElement.className = 'news-item';
         if (item.isstar) newsElement.classList.add('starred');
-        
+
         const content = `
             <span class="news-time">${item.time}</span>
             <span class="news-event">${item.event}</span>
         `;
-        
+
         newsElement.innerHTML = content;
-        container.appendChild(newsElement);
-    });
+        return newsElement;
+    };
+
+    if (container) {
+        sortedItems.forEach(item => {
+            container.appendChild(renderNewsItem(item));
+        });
+    }
+
+    if (mobileContainer) {
+        sortedItems
+            .filter(item => item.isstar || String(item.event).trim().startsWith('★'))
+            .slice(0, 2)
+            .forEach(item => {
+                mobileContainer.appendChild(renderNewsItem(item));
+            });
+    }
 }
 
 // initialize the page

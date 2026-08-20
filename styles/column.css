@@ -42,7 +42,7 @@
 
 .category-title {
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 600;
     color: #000000;
     text-align: center;
     margin-bottom: 0px; /* 无间距 */
@@ -111,7 +111,7 @@
 
 .column-project-title {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 350;
     color: #000;
     margin: 0;
     line-height: 1.2;

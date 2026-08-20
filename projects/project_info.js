@@ -125,7 +125,7 @@ const projects = [
         isteam: true,
         weight: 11,
         otherLink2: null,
-        isResearch: true,
+        // isResearch: true,
         author: "Ziru Wei, Violet Yinuo Han, Tanvi Handoo, Alexandra Ion",
         venue: "In submission",
     }),

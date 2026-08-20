@@ -125,7 +125,19 @@ function createResearchProjectsSection() {
             if (project.venue) {
                 const venue = document.createElement('div');
                 venue.className = 'research-card-venue';
-                venue.textContent = project.venue;
+                const venueText = String(project.venue);
+                const parentheticalIndex = venueText.indexOf('(');
+
+                if (parentheticalIndex >= 0) {
+                    venue.appendChild(document.createTextNode(venueText.slice(0, parentheticalIndex)));
+
+                    const parenthetical = document.createElement('span');
+                    parenthetical.className = 'research-card-venue-note';
+                    parenthetical.textContent = venueText.slice(parentheticalIndex);
+                    venue.appendChild(parenthetical);
+                } else {
+                    venue.textContent = venueText;
+                }
                 projectDetails.appendChild(venue);
             }
 
@@ -483,6 +495,24 @@ function displayCategoryProjects(categoryName) {
     });
 }
 
+function initializeArchiveToggle() {
+    const toggle = document.querySelector('.archive-toggle');
+    const archive = document.querySelector('#project-archive-mobile');
+
+    if (!toggle || !archive) return;
+
+    const setOpen = (isOpen) => {
+        archive.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    setOpen(false);
+
+    toggle.addEventListener('click', () => {
+        setOpen(!archive.classList.contains('is-open'));
+    });
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     // Create research section
@@ -493,6 +523,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create desktop carousel (only visible on desktop)
     createDesktopCarousel();
+
+    // Initialize mobile project archive toggle
+    initializeArchiveToggle();
 
     // Disable image dragging
     enforceNoSelectNoDragOnImages();

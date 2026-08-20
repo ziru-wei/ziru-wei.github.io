@@ -3,7 +3,7 @@
 Keywords: Human-Computer Interaction; Human-Robot Interaction; Context-Aware Interaction
 
 ## Research Interests
-My research explores next-generation AI interfaces designed to augment humans undisruptively in everyday physical environments. I develop medium-agnostic and context-adaptive systems spanning modalities from extended reality to robotic interfaces, and investigate how humans perceive them.
+My research explores AI interfaces out of screen to support and augment humans undisruptively in everyday physical environments. I develop medium-agnostic and context-adaptive systems spanning modalities from extended reality to robotic interfaces, and investigate how humans perceive them.
 
 ## Education
 
@@ -40,10 +40,6 @@ Violet Yinuo Han, \underline{Ziru Wei}, Aiden Yiliu Li, Chris Wu, Alexandra Ion
 
 **\textnormal{[P1]} On-site Holographic Building Construction: A Case Study of Aurora**
 
-\underline{Ziru Wei}, Jimmy Cheng.
-*4S'25* (50th Annual Meeting of the Society for Social Studies of Science, 2025) abstract accepted
-
-**\textnormal{[P4]} On-site Holographic Building Construction: A Case Study of Aurora**
 Sijie Liu, \underline{Ziru Wei}, Sining Wang.
 *CAADRIA'22* (Proceedings of the Association for Computer-Aided Architectural Design Research in Asia, 2022) full paper accepted (~30% acceptance, top-tier conference in computational design)
 
