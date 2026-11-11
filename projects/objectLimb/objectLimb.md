@@ -4,32 +4,43 @@ Robots are entering everyday life in increasingly diverse forms, from mobile man
 
 ## What if the toolbox could help?
 
-Picture two ways of getting a tool during assembly. A standalone arm reaches into a toolbox and hands it to you. In the other setup, the arms are part of the toolbox itself. The action is familiar in both cases, but the second setup can feel like the toolbox is the collaborator.
+Imagine you're working on an assembly task, and a standalone robotic arm reaches into a toolbox, picks up a tool, and hands it to you. 
 
-We asked **\<whether embedding arms in objects that already belong in a task\>** changes **\<how people understand the robot and its help\>.**
+That would be nice, but ...  what if the robot could blend more into the task, as if it were part of the toolbox itself? Would it feel like the toolbox itself was collaborating with you?
 
 <figure>
   <img src="figures/toolbox-comparison.webp" width="840" height="378" alt="Standalone robotic arms beside a toolbox and the same kind of arms integrated into a toolbox." loading="lazy" decoding="async">
   <figcaption>Paper Fig. 1. A standalone arm and a toolbox with arms can assist with the same assembly task.</figcaption>
 </figure>
 
+We asked **\<whether embedding arms in objects that already belong in a task\>** changes **\<how people understand the robot and its help\>.**
+
+
+
+
 ## Comparing Form & Initiative
 
 **16 participants** assembled small objects and prepared no-bake desserts. 
-- In the object conditions, arms were integrated into a toolbox or a kitchen bookstand. 
-- In the comparison conditions, the arms stood separately. 
 Participants experienced each combination of form and initiative, with tasks and order counterbalanced.
-
-In one condition, the robot acted only when the person requested help. 
-In the other, either partner could initiate assistance. A hidden operator controlled the robots with consistent task knowledge across conditions. 
-
-
-This let us study **how people perceived the two forms and initiative styles** without introducing differences in autonomous capability.
 
 <figure>
   <img src="figures/study-conditions.webp" width="842" height="430" alt="The study contrasts standalone and object-embedded arms in assembly and dessert preparation, with human-initiated and mixed-initiative assistance." loading="lazy" decoding="async">
   <figcaption>Paper Fig. 2. The study varied embodiment and who could initiate assistance.</figcaption>
 </figure>
+
+
+- In the ObjectLimb condition, arms were integrated into a toolbox or a kitchen bookstand. 
+- In the GenericLimb condition, the arms stood separately. 
+
+
+
+- In Human-Initiative condition, the robot acted only when the person requested help. 
+- In Mixed-Initiave condition, either partner could initiate assistance. A hidden operator controlled the robots with consistent task knowledge across conditions. 
+
+
+This 2 by 2 study enable us to learn **how people perceived the two forms and initiative styles** without introducing differences in autonomous capability.
+
+
 
 ## Object --> Collaborator
 

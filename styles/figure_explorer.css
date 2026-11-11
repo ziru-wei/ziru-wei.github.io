@@ -90,3 +90,18 @@ figure-explorer figure > a:focus-visible {
     text-align: left;
     margin: 12px 0 0;
 }
+
+@media (max-width: 768px) {
+    figure-explorer .figure-explorer-stages:not([hidden]) {
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    figure-explorer .figure-explorer-controls.figure-explorer-stages button[aria-pressed] {
+        padding-inline: 2px;
+        font-size: 13px;
+        text-align: center;
+        white-space: normal;
+    }
+}
