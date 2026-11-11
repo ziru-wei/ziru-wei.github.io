@@ -5,12 +5,11 @@
 
 ![logo.png](logo.png)
 
-MR technologies provide unskilled implementers with a handy approach to materialize complex designs.
+MR (Mixed Reality)provide unskilled implementers with a handy approach to materialize complex designs.
 Instead of chasing zero-tolerance implementation and avoiding any potential deviations, MR-aided design-to-fabrication process can increase construction allowance by injecting computation into human operations.
 
-We domonstrate how we use this technology to design and fabricate AURORA with limited resources, to illuminate the reliance on manual labor in construction, particularly for non-standard practices in developing regions.
+We domonstrate how we used this technology to design and fabricate AURORA (a residential building built in Zhang Jiakou, China, where the Winter Olympics was held this year!) with limited resources, to illuminate the reliance on manual labor in construction, particularly for non-standard practices in developing regions.
 
-AURORA is a passive residential building built in Zhang Jiakou, China (where the Winter Olympics was held this year!). 
 
 
 
@@ -30,7 +29,7 @@ We integrated MR-aided approaches into a construction workflow devised for this 
 
 ![scope.png](scope.png)
 
-We chose to apply MR-assisted construction in the assembling process of the rooftop structure & the non-standard building envelope which most rely on manual construction for.
+We chose to apply MR-assisted fabrication in the assembling process of the rooftop structure & the non-standard building envelope which most rely on manual construction for.
 
 Through customizable parameters controlling model mobility, rotation, visibility of layers, and color settings, operators could precisely calibrate the alignment of virtual and actual elements, adapting projection clarity to existing lighting conditions.
 
@@ -44,7 +43,9 @@ Through customizable parameters controlling model mobility, rotation, visibility
 
 ![que.png](que.png)
 
-With 13 students and 2 MR devices at hand, collaborative work between those equipped with the devices and those without became crucial. So, we explored  and test different ways of cooperating to maximize the benefits of MR in construction, including registration and adjustment, synchronized work and cross-time work. We also assessed each ways and applied the most helpful ones in larger scopes.
+With 13 students and 2 MR devices at hand, collaborative work between those equipped with the devices and those without became crucial. 
+So, we explored  and test different ways of cooperating to maximize the benefits of MR in construction, including registration and adjustment, synchronized work and cross-time work. 
+We also assessed each ways and applied the most helpful ones in larger scopes.
 
 ![col02.png](col02.png)
 ![col01.png](col01.png)
