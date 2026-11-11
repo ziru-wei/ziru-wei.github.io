@@ -22,10 +22,10 @@ We integrated MR-aided approaches into a construction workflow devised for this 
 ## Design Process
 ![design.png](design.png)
 
-## Pre-holo Process
+## Pre-fabrication Process
 ![preprocess.png](preprocess.png)
 
-## Holo Process
+## MR-aided Fabrication
 
 ![scope.png](scope.png)
 
@@ -39,7 +39,7 @@ Through customizable parameters controlling model mobility, rotation, visibility
 ![gui02.png](gui02.png)
 ![gui03.png](gui03.png)
 
-### Collaboration
+### How we collaborated on the site
 
 ![que.png](que.png)
 
