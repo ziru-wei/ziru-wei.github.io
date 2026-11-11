@@ -1,0 +1,46 @@
+{
+  "width": 1722,
+  "height": 840,
+  "groups": [
+    {
+      "label": "Study conditions",
+      "views": [
+        {
+          "label": "Study conditions",
+          "image": "figures/study-conditions.webp",
+          "alt": "The four study conditions: PROACH, OptSpeed, BaSpeak, and Baseline."
+        }
+      ]
+    },
+    {
+      "label": "Study procedure",
+      "views": [
+        {
+          "label": "Condition assignment",
+          "video": "figures/study-assignment.mp4",
+          "alt": "Each participant experiences all four conditions in four sessions, with the sequence varied across participants."
+        },
+        {
+          "label": "Primary task",
+          "video": "figures/study-primary-task.mp4",
+          "alt": "The lab setup and the participant's primary task of sorting and organizing cards."
+        },
+        {
+          "label": "Robot delivery",
+          "video": "figures/study-robot-delivery.mp4",
+          "alt": "Four pink markers identify deliveries during the task, with one item from each urgency and relevance category."
+        }
+      ]
+    },
+    {
+      "label": "Delivery replacements",
+      "views": [
+        {
+          "label": "Delivery replacements",
+          "video": "figures/delivery-replacements.mp4",
+          "alt": "Alternate delivery items from the same urgency and relevance categories across sessions."
+        }
+      ]
+    }
+  ]
+}

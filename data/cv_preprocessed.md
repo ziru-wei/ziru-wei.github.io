@@ -3,7 +3,7 @@
 Keywords: Human-Computer Interaction; Human-Robot Interaction; Context-Aware Interaction
 
 ## Research Interests
-My research explores AI interfaces out of screen to support and augment humans undisruptively in everyday physical environments. I develop medium-agnostic and context-adaptive systems spanning modalities from extended reality to robotic interfaces, and investigate how humans perceive them.
+My research explores AI interfaces out of screen to support and augment humans undisruptively in everyday physical environments. I develop medium-agnostic and context-adaptive systems spanning from extended reality to robotic interfaces, and investigate how humans perceive them.
 
 ## Education
 

@@ -1,0 +1,90 @@
+{
+  "width": 1406,
+  "height": 665,
+  "groups": [
+    {
+      "label": "Input",
+      "views": [
+        {
+          "label": "Engagement",
+          "image": "figures/engagement.webp",
+          "alt": "Input diagram highlighting how the user's head pose feeds the engagement score.",
+          "icon": "figures/icons/engagement.png"
+        },
+        {
+          "label": "Cognitive load",
+          "image": "figures/cognitive-load.webp",
+          "alt": "Input diagram highlighting a task-level estimate of the user's cognitive load.",
+          "icon": "figures/icons/cognitive-load.png",
+          "caption": "In the study, cognitive load was predefined for the task. In the demo, a vision-language model estimated it from video."
+        },
+        {
+          "label": "Relevance",
+          "image": "figures/relevance.webp",
+          "alt": "Input diagram comparing the delivered object with the task the user is doing.",
+          "icon": "figures/icons/relevance.png",
+          "caption": "In the study, relevance was predefined for each delivery. In the demo, a language model estimated it from the delivery and task context."
+        },
+        {
+          "label": "Urgency",
+          "image": "figures/urgency.webp",
+          "alt": "Input diagram highlighting urgency alongside the relevance of a delivery.",
+          "icon": "figures/icons/urgency.png",
+          "caption": "In the study, urgency was predefined for each delivery. In the demo, a language model estimated it from the delivery and task context."
+        },
+        {
+          "label": "Distance",
+          "image": "figures/distance.webp",
+          "alt": "Input diagram highlighting the robot's distance from the user.",
+          "icon": "figures/icons/distance.png"
+        }
+      ]
+    },
+    {
+      "label": "Formulation",
+      "views": [
+        {
+          "label": "Clarity",
+          "image": "figures/clarity-cost.webp",
+          "alt": "Slide highlighting the clarity term for approach speed and speech detail.",
+          "icon": "figures/icons/clarity-cost.png"
+        },
+        {
+          "label": "Disturbance",
+          "image": "figures/disturbance-cost.webp",
+          "alt": "Slide highlighting movement and speech penalties for disturbing a busy user.",
+          "icon": "figures/icons/disturbance-cost.png"
+        },
+        {
+          "label": "Delay",
+          "image": "figures/delay-cost.webp",
+          "alt": "Slide highlighting how delay favors progress and shorter explanations for urgent deliveries.",
+          "icon": "figures/icons/delay-cost.png"
+        }
+      ]
+    },
+    {
+      "label": "Output",
+      "views": [
+        {
+          "label": "Speech LOD",
+          "image": "figures/speech-lod.gif",
+          "alt": "Three levels of speech detail add information in sequence: the delivered item, advice on how to use it, and the benefit of that action.",
+          "icon": "figures/icons/speech-lod.png"
+        },
+        {
+          "label": "Speech timing",
+          "image": "figures/speech-timing.webp",
+          "alt": "The robot can speak at different points along its approach path.",
+          "icon": "figures/icons/speech-timing.png"
+        },
+        {
+          "label": "Approach speed",
+          "image": "figures/approach-speed.webp",
+          "alt": "The robot initially hesitates, then approaches the user more directly.",
+          "icon": "figures/icons/approach-speed.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+.markdown-content .proach-results-figure {
+    max-width: min(100%, 500px);
+    margin: 32px auto;
+}
+
+.markdown-content .proach-results-figure > a {
+    display: block;
+    border-bottom: 0;
+}
+
+.markdown-content .proach-application {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(840px, calc(100vw - 40px));
+    max-width: none;
+    margin: 30px 0 36px;
+}
+
+.markdown-content .proach-application img,
+.markdown-content .proach-results-figure img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.markdown-content .proach-application figcaption {
+    margin: 10px 0 0;
+}

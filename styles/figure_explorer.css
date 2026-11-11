@@ -1,0 +1,92 @@
+figure-explorer {
+    display: block;
+}
+
+.markdown-content figure-explorer figure {
+    margin: 22px 0 28px;
+}
+
+.markdown-content figure-explorer figure > a {
+    border-bottom: 0;
+}
+
+.markdown-content figure-explorer figure > a:not([hidden]),
+.markdown-content figure-explorer figure > video:not([hidden]) {
+    display: block;
+}
+
+.markdown-content figure-explorer figure > img,
+.markdown-content figure-explorer figure > a > img,
+.markdown-content figure-explorer figure > video {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+figure-explorer .figure-explorer-controls:not([hidden]) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+figure-explorer .figure-explorer-controls button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid #222;
+    background: #fff;
+    color: #222;
+    font: 500 13px/1.4 "Roboto", Arial, sans-serif;
+    cursor: pointer;
+}
+
+figure-explorer .figure-explorer-stages:not([hidden]) {
+    gap: 16px;
+}
+
+figure-explorer .figure-explorer-controls.figure-explorer-stages button[aria-pressed] {
+    justify-content: center;
+    padding: 6px 8px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: #222;
+    font-size: 15px;
+    font-weight: 650;
+}
+
+figure-explorer .figure-explorer-controls.figure-explorer-stages button[aria-pressed="true"] {
+    border-bottom-color: #222;
+}
+
+figure-explorer .figure-explorer-controls .figure-explorer-icon {
+    width: auto;
+    height: 16px;
+    max-width: 44px;
+    margin: 0;
+    object-fit: contain;
+}
+
+figure-explorer .figure-explorer-controls button[aria-pressed="true"] {
+    border-color: #222;
+    background: #222;
+    color: #fff;
+}
+
+figure-explorer .figure-explorer-controls button[aria-pressed="true"] .figure-explorer-icon {
+    filter: invert(1);
+}
+
+figure-explorer .figure-explorer-controls button:focus-visible,
+figure-explorer figure > a:focus-visible {
+    outline: 2px solid #222;
+    outline-offset: 2px;
+}
+
+.markdown-content figure-explorer figcaption {
+    text-align: left;
+    margin: 12px 0 0;
+}

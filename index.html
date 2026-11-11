@@ -73,32 +73,34 @@
             </div>
 
             <h3 class="projects-heading archive-heading">
-                <button class="archive-toggle" type="button" aria-expanded="false" aria-controls="project-archive-mobile">
+                <button class="archive-toggle" type="button" aria-expanded="false" aria-controls="project-archive">
                     <span class="archive-toggle-triangle" aria-hidden="true"></span>
                     <span>Project Archive</span>
                 </button>
             </h3>
 
 
-            <!-- Desktop carousel view -->
-            <div class="desktop-carousel">
-                <!-- Category carousel (top section) -->
-                <div class="carousel-categories">
-                    <div class="carousel-track">
-                        <!-- Categories will be inserted here by JavaScript -->
+            <div class="archive-panel" id="project-archive" hidden>
+                <!-- Desktop carousel view -->
+                <div class="desktop-carousel">
+                    <!-- Category carousel (top section) -->
+                    <div class="carousel-categories">
+                        <div class="carousel-track">
+                            <!-- Categories will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Project display (bottom section) -->
+                    <div class="carousel-projects">
+                        <!-- Projects for selected category will be inserted here -->
                     </div>
                 </div>
 
-                <!-- Project display (bottom section) -->
-                <div class="carousel-projects">
-                    <!-- Projects for selected category will be inserted here -->
-                </div>
-            </div>
-
-            <!-- Mobile column view -->
-            <div class="column-view" id="project-archive-mobile">
-                <div class="column-container">
-                    <!-- category columns will be inserted here -->
+                <!-- Mobile column view -->
+                <div class="column-view">
+                    <div class="column-container">
+                        <!-- category columns will be inserted here -->
+                    </div>
                 </div>
             </div>
         </div>

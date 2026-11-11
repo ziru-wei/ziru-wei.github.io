@@ -246,6 +246,44 @@ function createMetaLink(label, url) {
     return link;
 }
 
+function collapseLeadingAbstract(markdown) {
+    const heading = markdown.firstElementChild;
+    if (!heading?.matches('h1, h2, h3, h4, h5, h6') || heading.textContent.trim().toLowerCase() !== 'abstract') return;
+
+    const details = document.createElement('details');
+    details.className = 'project-abstract';
+    const summary = document.createElement('summary');
+    const level = Number(heading.tagName.slice(1));
+    let node = heading.nextSibling;
+    markdown.insertBefore(details, heading);
+    summary.append(heading);
+    details.append(summary);
+
+    while (node) {
+        if (/^H[1-6]$/.test(node.nodeName) && Number(node.nodeName.slice(1)) <= level) break;
+        const next = node.nextSibling;
+        details.append(node);
+        node = next;
+    }
+}
+
+function initResearchAbstract() {
+    const markdown = document.getElementById('markdown-content');
+    if (!markdown) return;
+    if (markdown.firstElementChild) {
+        collapseLeadingAbstract(markdown);
+        return;
+    }
+
+    // Project templates fetch and render their Markdown after this module loads.
+    const observer = new MutationObserver(() => {
+        if (!markdown.firstElementChild) return;
+        observer.disconnect();
+        collapseLeadingAbstract(markdown);
+    });
+    observer.observe(markdown, { childList: true });
+}
+
 export class ProjectPage {
     static init() {
         // 检查并记录项目访问
@@ -258,6 +296,9 @@ export class ProjectPage {
         if (!currentProject) {
             console.error('Project not found');
             return;
+        }
+        if (currentProject.isResearch && currentProject.ismarkdown) {
+            initResearchAbstract();
         }
     }
 

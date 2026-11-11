@@ -937,9 +937,8 @@ body::-webkit-scrollbar {
         width: 100%;
     }
 
-    .column-view {
+    .archive-panel {
         max-width: 760px;
-        width: 100%;
     }
 
     .news-column {
@@ -959,10 +958,6 @@ body::-webkit-scrollbar {
     }
 
     .column-view {
-        display: none;
-    }
-
-    .column-view.is-open {
         display: block;
     }
 
@@ -991,27 +986,14 @@ body::-webkit-scrollbar {
     }
 
     .archive-toggle {
-        cursor: pointer;
         position: relative;
     }
 
-    .archive-toggle .archive-toggle-triangle {
-        display: inline-block;
+    .archive-toggle-triangle {
         position: absolute;
         left: -13px;
         top: 50%;
-        width: 0;
-        height: 0;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left: 7px solid currentColor;
-        transform-origin: center;
-        transform: translateY(-50%);
-        transition: transform 0.12s ease;
-    }
-
-    .archive-toggle[aria-expanded="true"] .archive-toggle-triangle {
-        transform: translateY(-50%) rotate(90deg);
+        translate: 0 -50%;
     }
 
     .projects-column .mobile-news-section {
@@ -1596,7 +1578,8 @@ body::-webkit-scrollbar {
     gap: 12px;
 }
 
-.projects-heading::after {
+.projects-heading:not(.archive-heading)::after,
+.archive-toggle::after {
     content: '';
     flex: 1;
     height: 1.2px;
@@ -1605,7 +1588,8 @@ body::-webkit-scrollbar {
 }
 
 .archive-toggle {
-    display: inline-flex;
+    display: flex;
+    width: 100%;
     align-items: center;
     gap: 6px;
     appearance: none;
@@ -1616,11 +1600,22 @@ body::-webkit-scrollbar {
     font-style: inherit;
     letter-spacing: inherit;
     padding: 0;
-    cursor: default;
+    cursor: pointer;
 }
 
 .archive-toggle-triangle {
-    display: none;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid currentColor;
+    transition: transform 0.12s ease;
+}
+
+.archive-toggle[aria-expanded="true"] .archive-toggle-triangle {
+    transform: rotate(90deg);
+}
+
+.archive-panel {
+    width: 100%;
 }
 
 /* ============================================

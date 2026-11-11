@@ -1,0 +1,56 @@
+assistance-figure {
+    display: block;
+}
+
+.markdown-content .assistance-figure {
+    margin: 28px auto;
+    font-family: "Roboto", Arial, sans-serif;
+    text-align: left;
+}
+
+.assistance-figure .assistance-group {
+    margin-bottom: 20px;
+}
+
+.assistance-figure .assistance-group-title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.assistance-figure .assistance-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 164px), 1fr));
+    gap: 12px;
+}
+
+.assistance-figure .assistance-card {
+    border: 1px solid #c4c4c4;
+}
+
+.assistance-figure .assistance-card-title {
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    min-height: 2.7em;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.markdown-content .assistance-card img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.assistance-figure .assistance-card-example {
+    display: block;
+    padding: 8px 10px;
+    font-size: 14px;
+    line-height: 1.45;
+}
+

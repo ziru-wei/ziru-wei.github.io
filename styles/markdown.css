@@ -39,7 +39,7 @@
     margin: 20px auto;
     width: 760px;  /* 固定宽度 */
     font-family: "JetBrains Mono", monospace;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.901);
     font-weight: 450;
@@ -89,8 +89,8 @@
 }
 
 .markdown-content h2 {
-    font-size: 16px;
-    font-family: "JetBrains Mono", monospace;
+    font-size: 17px;
+    font-family: "Roboto", Arial, sans-serif;
     font-style: italic;
     font-weight: 580;
     margin-top: 280px;  /* 增加二级标题上方的空间 */
@@ -112,8 +112,8 @@
 }
 
 .markdown-content h3 {
-    font-size: 16px;
-    font-family: "JetBrains Mono", monospace;
+    font-size: 17px;
+    font-family: "Roboto", Arial, sans-serif;
     font-weight: 600;
     margin-bottom: 20px;  /* 调整三级标题上方的空间 */
     margin-top: 140px;  /* 调整三级标题上方的空间 */
@@ -131,7 +131,7 @@
 }
 
 .markdown-content h4 {
-    font-size: 16px;
+    font-size: 17px;
     font-family: "JetBrains Mono", monospace;
     font-weight: 300;
     letter-spacing: -0.5px;
@@ -144,13 +144,13 @@
 }
 
 .markdown-content h5 {
-    font-size: 16px;
+    font-size: 17px;
     margin-top: 100px;
     margin-bottom: 10px;
 
 }
 .markdown-content h6 {
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 100px;
     margin-bottom: 10px;
 
@@ -158,7 +158,7 @@
 .markdown-content p {
     margin: 24px 0;
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 360;
     line-height: 1.4;
     margin-left: -36px;
@@ -214,7 +214,7 @@
     margin: 12px 0;
     padding-left: 40px;
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.2;
     margin-left: 8px;
     font-weight: 360;
@@ -232,7 +232,7 @@
     margin: 4px 0;
     padding-left: 4px;
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.2;
     margin-left: 8px;
     font-weight: 360;
@@ -504,8 +504,8 @@
     }
     
     .markdown-content h2 {
-        font-size: 15px;
-        font-family: "JetBrains Mono", monospace;
+        font-size: 16px;
+        font-family: "Roboto", Arial, sans-serif;
         font-style: italic;
         font-weight: 600;
         margin-top: 200px;  /* 增加二级标题上方的空间 */
@@ -527,8 +527,8 @@
     }
     
     .markdown-content h3 {
-        font-size: 14px;
-        font-family: "JetBrains Mono", monospace;
+        font-size: 15px;
+        font-family: "Roboto", Arial, sans-serif;
         font-weight: 400;
         margin-bottom: 40px;  /* 调整三级标题上方的空间 */
         margin-top: 120px;  /* 调整三级标题上方的空间 */
@@ -546,7 +546,7 @@
     }
     
     .markdown-content h4 {
-        font-size: 14px;
+        font-size: 15px;
         font-family: "JetBrains Mono", monospace;
         font-weight: 300;
     }
@@ -555,7 +555,7 @@
         margin: 24px 0;
         letter-spacing: 0.4px;
         font-family: "Roboto", sans-serif;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 360;
         line-height: 1.5;
         margin-left: -36px;
@@ -602,7 +602,7 @@
         padding-right: 10px;
         letter-spacing: 0.4px;
         font-family: "Roboto", sans-serif;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 360;
         line-height: 1.5;
         margin-left: 4px;
@@ -623,7 +623,7 @@
         margin-left: 8px;
         letter-spacing: 0.4px;
         font-family: "Roboto", sans-serif;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 360;
         line-height: 1.5;
         margin-left: 4px;
@@ -812,3 +812,24 @@
 
 }
 
+
+/* The native summary marker is the abstract disclosure control. */
+.markdown-content .project-abstract > summary {
+    cursor: pointer;
+}
+
+.markdown-content .project-abstract:not([open]) + :is(h1, h2, h3, h4, h5, h6) {
+    margin-top: 40px;
+}
+
+.markdown-content .project-abstract > summary > :is(h1, h2, h3, h4, h5, h6) {
+    display: inline;
+    position: static;
+    transform: none;
+    margin: 0;
+}
+
+.markdown-content .project-abstract > summary > :is(h1, h2, h3, h4, h5, h6)::before,
+.markdown-content .project-abstract > summary > :is(h1, h2, h3, h4, h5, h6)::after {
+    content: none;
+}

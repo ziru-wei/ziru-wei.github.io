@@ -122,7 +122,7 @@ function createResearchProjectsSection() {
                 projectDetails.appendChild(author);
             }
 
-            if (project.venue) {
+            if (project.venue || project.publicationStatus) {
                 const venue = document.createElement('div');
                 venue.className = 'research-card-venue';
                 const venueText = [
@@ -357,20 +357,22 @@ function createDesktopCarousel() {
 
     // Initialize carousel
     updateCarousel();
-    startCarouselAutoPlay();
 }
 
 function startCarouselAutoPlay() {
-    // Clear any existing interval
-    if (carouselInterval) {
-        clearInterval(carouselInterval);
-    }
+    stopCarouselAutoPlay();
+    if (document.getElementById('project-archive').hidden) return;
 
     // Auto-advance every 3 seconds
     carouselInterval = setInterval(() => {
         currentCategoryIndex = (currentCategoryIndex + 1) % availableCategories.length;
         updateCarousel();
     }, 3000);
+}
+
+function stopCarouselAutoPlay() {
+    clearInterval(carouselInterval);
+    carouselInterval = null;
 }
 
 function resetCarouselInterval() {
@@ -476,12 +478,7 @@ function displayCategoryProjects(categoryName) {
         }
 
         // Add hover handlers to pause/resume carousel
-        projectCard.addEventListener('mouseenter', () => {
-            if (carouselInterval) {
-                clearInterval(carouselInterval);
-                carouselInterval = null;
-            }
-        });
+        projectCard.addEventListener('mouseenter', stopCarouselAutoPlay);
 
         projectCard.addEventListener('mouseleave', () => {
             startCarouselAutoPlay();
@@ -501,19 +498,19 @@ function displayCategoryProjects(categoryName) {
 
 function initializeArchiveToggle() {
     const toggle = document.querySelector('.archive-toggle');
-    const archive = document.querySelector('#project-archive-mobile');
+    const archive = document.getElementById('project-archive');
 
     if (!toggle || !archive) return;
 
-    const setOpen = (isOpen) => {
-        archive.classList.toggle('is-open', isOpen);
-        toggle.setAttribute('aria-expanded', String(isOpen));
-    };
-
-    setOpen(false);
-
     toggle.addEventListener('click', () => {
-        setOpen(!archive.classList.contains('is-open'));
+        const isOpen = archive.hidden;
+        archive.hidden = !isOpen;
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+            startCarouselAutoPlay();
+        } else {
+            stopCarouselAutoPlay();
+        }
     });
 }
 
@@ -528,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create desktop carousel (only visible on desktop)
     createDesktopCarousel();
 
-    // Initialize mobile project archive toggle
+    // Initialize project archive toggle
     initializeArchiveToggle();
 
     // Disable image dragging
