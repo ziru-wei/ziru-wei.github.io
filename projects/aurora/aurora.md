@@ -5,8 +5,8 @@
 
 ![logo.png](logo.png)
 
-MR (Mixed Reality) provides unskilled implementers with a handy approach to materialize complex designs.
-Instead of chasing zero-tolerance implementation and avoiding any potential deviations, MR-aided design-to-fabrication process can increase construction allowance by injecting computation into human operations.
+MR (Mixed Reality) provides a handy approach for assisting with materializing complex designs.
+Instead of chasing zero-tolerance implementation and avoiding any potential deviations, MR-aided design-to-fabrication process can increase construction allowance.
 
 We domonstrate how we used this technology to design and fabricate AURORA (a residential building built in Zhang Jiakou, China, where the Winter Olympics was held this year!) with limited resources, to illuminate the reliance on manual labor in construction, particularly for non-standard practices in developing regions.
 
