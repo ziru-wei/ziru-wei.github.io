@@ -1094,18 +1094,50 @@ body::-webkit-scrollbar {
     margin-top: 100px;
 }
 
-/* Project citation style */
-.project-citation {
-    margin-top: 15px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: var(--color-text);
-    font-family: "Roboto", sans-serif;
-    font-style: italic;
+/* Citation controls share the PDF / DOI action row. */
+.citation-status {
+    display: block;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.citation-status:empty {
+    margin-bottom: 0;
+}
+
+.citation-copy {
+    box-sizing: border-box;
+    flex: 0 0 112px;
+    margin-inline-start: auto;
+    font-family: inherit;
+    font-style: normal;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.citation-copy:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+.bibtex-box {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 12px;
+    margin: 0 0 16px;
+    border: 1px solid var(--color-text);
+    font-size: 12px;
+    line-height: 1.5;
+    font-style: normal;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    user-select: text;
+    -webkit-user-select: text;
 }
 
 .project-title {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 56px;
     font-weight: 400;
     margin: 0;
@@ -1113,11 +1145,128 @@ body::-webkit-scrollbar {
 }
 
 .project-subtitle {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 20px;
     font-weight: 320;
     margin: 8px 0 0 0;
     padding: 0;
+}
+
+/* Keyboard and click navigation for the Village presentation. */
+.slide-viewer {
+    box-sizing: border-box;
+    width: min(100% - 32px, 1120px);
+    margin: 32px auto 64px;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.slide-stage {
+    position: relative;
+    background: #f7f7f7;
+    border: 1px solid var(--color-text);
+}
+
+.slide-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+.slide-hit-area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.slide-hit-previous { left: 0; }
+.slide-hit-next { right: 0; }
+
+.slide-viewer:focus-visible,
+.slide-hit-area:focus-visible,
+.slide-controls button:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+}
+
+.slide-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.slide-controls button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.slide-controls button[aria-disabled="true"] {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.slide-hit-area[aria-disabled="true"] { cursor: default; }
+.slide-counter { min-width: 55px; text-align: center; }
+.slide-pdf-link { color: inherit; }
+.slide-help { text-align: center; font-size: 12px; color: #666; }
+
+/* Full-paper overview at the bottom of PDF project pages. */
+.pdf-pages-section {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 48px auto 80px;
+    padding: 32px clamp(16px, 5vw, 80px);
+    background: #f7f7f7;
+}
+
+.pdf-pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 28px 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.pdf-page-link {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.pdf-page-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: white;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 8%);
+    transition: box-shadow 0.15s ease;
+}
+
+.pdf-page-link:hover img,
+.pdf-page-link:focus-visible img {
+    box-shadow: 0 3px 14px rgb(0 0 0 / 20%);
+}
+
+.pdf-page-link:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 4px;
+}
+
+.pdf-page-number {
+    font: 12px/1.4 "Roboto", Arial, sans-serif;
+    text-align: center;
 }
 
 /* Meta links container style */
@@ -1174,7 +1323,7 @@ body::-webkit-scrollbar {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    gap: -76px;
+    gap: 0;
 }
 
 /* Vertical separator */
@@ -1187,12 +1336,13 @@ body::-webkit-scrollbar {
     display: flex;
     min-height: 1px;
     align-items: baseline;
-    border-bottom: 1.2px solid var(--color-text);
+    border-bottom: 1px solid var(--color-text);
 }
 
 /* The top border of the first metadata item */
-.metadata-item:first-child {
-    border-top: 1.2px solid var(--color-text);
+.project-meta > .metadata-item:first-child,
+.project-meta > .links-container + .metadata-item {
+    border-top: 1px solid var(--color-text);
 }
 
 .meta-label {
@@ -1655,19 +1805,6 @@ body::-webkit-scrollbar {
 /* blog article page project section style */
 .blog-post .project-section {
     max-width: 860px !important;
-}
-
-/* Time metadata item special style */
-.metadata-item.time-item {
-    border-top: 1.2px solid var(--color-text);
-}
-
-/* keep the original bottom border style */
-.metadata-item {
-    display: flex;
-    min-height: 1px;
-    align-items: baseline;
-    border-bottom: 1.2px solid var(--color-text);
 }
 
 /* Player 基础样式 - 在非移动端隐藏 */

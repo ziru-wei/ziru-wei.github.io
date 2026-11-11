@@ -17,12 +17,15 @@ class Project {
         briefDescription = null,
         narrative = null,
         youtubeLink = null,
-        paperLink = null,
+        pdfLink = null,
+        pdfPageCount = 0,
         githubLink = null,
         doi = null,
-        citation = null,
+        publication = null,
         otherLink2 = null,
         venue = null,
+        publicationStatus = null,
+        venueNote = null,
         researchType = null,
         otherLink3 = null,
         prize = null,
@@ -33,7 +36,7 @@ class Project {
         category = null,
         categories = null,
         isResearch = false,
-        linkOrder = ['youtubeLink', 'paperLink', 'githubLink', 'otherLink2', 'doi'] // 默认顺序
+        linkOrder = ['youtubeLink', 'pdfLink', 'githubLink', 'otherLink2', 'doi'] // 默认顺序
     }) {
         this.name = name;
         this.title = title;
@@ -50,13 +53,16 @@ class Project {
         this.myContribution = myContribution;
         this.tools = tools;
         this.venue = venue;
+        this.publicationStatus = publicationStatus;
+        this.venueNote = venueNote;
         this.briefDescription = briefDescription;
         this.narrative = narrative;
         this.youtubeLink = youtubeLink;
-        this.paperLink = paperLink;
+        this.pdfLink = pdfLink;
+        this.pdfPageCount = pdfPageCount;
         this.githubLink = githubLink;
         this.doi = doi;
-        this.citation = citation;
+        this.publication = publication;
         this.otherLink2 = otherLink2;
         this.author = author;
         this.otherLink3 = otherLink3;
@@ -77,6 +83,39 @@ class Project {
         this.category = resolvedCategories.length ? resolvedCategories[0] : null;
         this.isResearch = isResearch;
         this.linkOrder = linkOrder;
+    }
+
+    getBibtex() {
+        if (!this.publication) return '';
+        const fields = {
+            author: this.author.split(/,\s*/).join(' and '),
+            title: `{${this.title}}`,
+            booktitle: this.publication.booktitle,
+            year: this.time,
+            volume: this.publication.volume,
+            pages: this.publication.pages,
+            publisher: this.publication.publisher,
+            doi: this.doi.replace(/^https?:\/\/doi\.org\//, ''),
+            url: this.doi
+        };
+        const lines = Object.entries(fields)
+            .filter(([, value]) => value != null)
+            .map(([key, value]) => `  ${key} = {${value}}`);
+        return `@inproceedings{${this.name}${this.time},\n${lines.join(',\n')}\n}`;
+    }
+
+    // Derive detail-page headings without changing the full title used on cards.
+    getPageHeading() {
+        const title = (this.title || '').trim();
+        const subtitle = (this.subtitle || '').trim();
+        const separatorIndex = title.search(/[:：]/u);
+        if (separatorIndex > 0) {
+            const mainTitle = title.slice(0, separatorIndex).trim();
+            const derivedSubtitle = title.slice(separatorIndex + 1).trim();
+            if (derivedSubtitle) return { title: mainTitle, subtitle: derivedSubtitle };
+        }
+
+        return { title, subtitle };
     }
 
     // 获取项目 HTML 页面路径
@@ -131,25 +170,49 @@ const projects = [
     }),
     new Project({
         name: "objectLimb",
-        title: "Objects with Arms: How Task-Relevant Embodiment Shapes Perception in Physical Collaboration",
-        time: "2025",
+        title: "Objects with Arms: How Robot Embodiment Shapes Perception in Physical Collaboration",
+        time: "2026",
+        ispage: true,
+        ismarkdown: true,
+        youtubeLink: "https://www.youtube.com/embed/kScqn2mIznY",
+        pdfLink: "/projects/objectLimb/Robot-w-Arms_ROMAN26.pdf",
+        pdfPageCount: 6,
+        doi: "https://doi.org/10.1109/RO-MAN72286.2026.11714821",
+        publication: {
+            booktitle: "35th IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)",
+            pages: "2420--2425",
+            publisher: "IEEE"
+        },
         isteam: true,
         weight: 10,
         otherLink2: null,
         isResearch: true,
         author: "Violet Yinuo Han, Ziru Wei, Aiden Yiliu Li, Chris Wu, Alexandra Ion",
-        venue: " RO-MAN'26 (IEEE International Conference on Robot and Human Interactive Communication) full paper accepted",
+        venue: "RO-MAN'26 (IEEE International Conference on Robot and Human Interactive Communication)",
+        publicationStatus: "full paper accepted",
     }),
     new Project({
         name: "proach",
         title: "While You're Still Busy: Context-Aware Approach Optimization for Proactive Mobile Robots",
         time: "2026",
+        ispage: true,
+        ismarkdown: true,
+        youtubeLink: "https://www.youtube.com/embed/IUVRtaTDW-0",
+        pdfLink: "/projects/proach/PROACH_UIST26.pdf",
+        pdfPageCount: 13,
+        doi: "https://doi.org/10.1145/3830398.3830714",
+        publication: {
+            booktitle: "Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology",
+            pages: "84:1--84:13",
+            publisher: "Association for Computing Machinery"
+        },
         isteam: true,
         weight: 12,
         otherLink2: null,
         isResearch: true,
         author: "Ziru Wei, Di Wen, Leyuan Chen, Hassan Shahzad, Alexandra Ion",
-        venue: "UIST'26 (ACM Symposium on User Interface Software and Technology) full paper accepted",
+        venue: "UIST'26 (ACM Symposium on User Interface Software and Technology)",
+        publicationStatus: "full paper accepted",
     }),
     new Project({
         name: "seeingsaw",
@@ -212,6 +275,8 @@ const projects = [
     }),
     new Project({
         name: "villagerenewal",
+        pdfLink: "/projects/villagerenewal/wenben.pdf",
+        pdfPageCount: 73,
         title: "Village Renewal",
         subtitle: "Area Revitalization Design",
         labels: ["Physical"],
@@ -238,19 +303,27 @@ const projects = [
         time: "2022",
         ispage: true,
         isteam: true,
-        author: "Sijie Liu, Ziru Wei, Sining Wang",
+        author: "Siji Liu, Ziru Wei, Sining Wang",
         myContribution: "designing, constructing, writing",
-        citation: "Sijie Liu, Ziru Wei, and Sining Wang. 2022. On-site Holographic Building Construction: A Case Study of Aurora. In Proceedings of CAADRIA ’22: The 27th International Conference on Computer-Aided Architectural Design Research in Asia (Post-Carbon). Sydney, Australia. April 9–15, 2022. DOI: https://doi.org/10.52842/conf.caadria.2022.2.405",
+        publication: {
+            booktitle: "POST-CARBON: Proceedings of the 27th International Conference of the Association for Computer-Aided Architectural Design Research in Asia (CAADRIA)",
+            volume: "2",
+            pages: "405--414",
+            publisher: "Association for Computer-Aided Architectural Design Research in Asia (CAADRIA)"
+        },
         tools: "Fologram, Rhino, Grasshopper",
         briefDescription: `Instead of chasing zero-tolerance implementation and avoiding any potential deviations, MR-aided design practices aim to increase construction allowance by injecting computation into human operations.`,
         youtubeLink: "https://www.youtube.com/embed/H6xKJxs9u1o?si=0Meg0QDRaytgsf3E;controls=0",
         doi: "https://doi.org/10.52842/conf.caadria.2022.2.405",
-        paperLink: "https://papers.cumincad.org/data/works/att/caadria2022_157.pdf",
+        pdfLink: "/projects/aurora/Holo-Build_CADDRIA22.pdf",
+        pdfPageCount: 10,
         weight: 9.9,
         ismarkdown: true,
         situate: { x: 70, y: -85 },
         category: "Blended Environment",
-        venue: "CAADRIA'22 (Computer-Aided Architectural Design Research in Asia) (~30%, Top-tier Computational Design Conference) full paper accepted",
+        venue: "CAADRIA'22 (Computer-Aided Architectural Design Research in Asia)",
+        venueNote: "~30%, Top-tier Computational Design Conference",
+        publicationStatus: "full paper accepted",
         isResearch: true
     }),
     // new Project({
@@ -434,13 +507,13 @@ const projects = [
     }),
     new Project({
         name: "datareso",
-        title: "Perceivable Data",
-        subtitle: "An multi-modal data exploration toolkit for public urban discourse",
+        title: "AR Urban Data Explorer",
+        subtitle: "Exploring city data through mixed reality and physical feedback",
         labels: ["XR", "HCD"],
         time: "2023",
         isteam: false,
         tools: "Unity | C# | HoloLens 2 | Arduino | Rhino | ArcGIS | Figma | Procreate | laser cut",
-        briefDescription: "How to make a bridge between distant information and sensible responses?",
+        briefDescription: "An interactive city model for exploring urban data together.",
         youtubeLink: "https://www.youtube.com/embed/Nbk9Z47OTQQ?si=e-NE6-3MkLDDQATN",
         situate: { x: 60, y: -15 },
         ispage: true,

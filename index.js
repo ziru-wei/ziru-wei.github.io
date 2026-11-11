@@ -125,7 +125,11 @@ function createResearchProjectsSection() {
             if (project.venue) {
                 const venue = document.createElement('div');
                 venue.className = 'research-card-venue';
-                const venueText = String(project.venue);
+                const venueText = [
+                    project.venue,
+                    project.venueNote ? `(${project.venueNote})` : null,
+                    project.publicationStatus
+                ].filter(Boolean).join(' ');
                 const parentheticalIndex = venueText.indexOf('(');
 
                 if (parentheticalIndex >= 0) {
@@ -167,7 +171,7 @@ function createResearchProjectsSection() {
                 addLink(videoUrl, 'Video');
             }
 
-            addLink(project.paperLink, 'Paper');
+            addLink(project.pdfLink, 'PDF');
             addLink(project.doi, 'DOI');
 
             if (links.length) {

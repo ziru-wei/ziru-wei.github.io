@@ -12,21 +12,16 @@ if (project) {
     document.title = `${project.title} - Ziru Wei`;
 
     // 填充项目标题和副标题
-    document.querySelector('.project-title').textContent = project.title;
-    document.querySelector('.project-subtitle').textContent = project.subtitle;
+    const heading = project.getPageHeading();
+    document.querySelector('.project-title').textContent = heading.title;
+    const subtitleElement = document.querySelector('.project-subtitle');
+    subtitleElement.textContent = heading.subtitle;
+    subtitleElement.hidden = !heading.subtitle;
     
-    // 添加citation（如果有的话）
-    if (project.citation) {
-        const citationElement = document.createElement('div');
-        citationElement.className = 'project-citation';
-        citationElement.innerHTML = `<strong>Publication:</strong> ${project.citation}`;
-        document.querySelector('.project-header').appendChild(citationElement);
-    }
-
     // 创建并填充元数据
     const metaSection = document.querySelector('.project-meta');
        // 添加链接
-       if (project.youtubeLink || project.paperLink || project.githubLink || project.otherLink2 || project.doi) {
+       if (project.youtubeLink || project.pdfLink || project.githubLink || project.otherLink2 || project.doi || project.publication) {
         const linksContainer = document.createElement('div');
         linksContainer.className = 'meta-item links-container';
         const linksWrapper = document.createElement('div');
@@ -35,8 +30,11 @@ if (project) {
         // 链接配置映射
         const linkConfig = {
             'doi': { label: 'DOI↗', value: project.doi },
-            'paperLink': { label: 'Paper↗', value: project.paperLink },
-            'youtubeLink': { label: 'Video↗', value: project.youtubeLink },
+            'pdfLink': { label: 'PDF↗', value: project.pdfLink },
+            'youtubeLink': {
+                label: 'Video↗',
+                value: project.youtubeLink?.replace(/https:\/\/www\.youtube\.com\/embed\/([A-Za-z0-9_-]+).*/, 'https://www.youtube.com/watch?v=$1')
+            },
             'githubLink': { label: 'GitHub↗', value: project.githubLink },
             'otherLink2': { label: 'Project Page↗', value: project.otherLink2 },
         };
@@ -50,9 +48,18 @@ if (project) {
             }
         });
 
-        linksWrapper.innerHTML = links.map(link => `<a href="${link.href}" target="_blank" class="meta-link">${link.textContent}</a>`).join('\n');
+        links.forEach(link => linksWrapper.appendChild(link));
         linksContainer.appendChild(linksWrapper);
+        if (project.publication) {
+            appendBibtexControls(project, linksWrapper, linksContainer);
+        }
         metaSection.appendChild(linksContainer);
+    }
+    if (project.author) {
+        metaSection.appendChild(createMetaItem('Authors', project.author));
+    }
+    if (project.venue) {
+        metaSection.appendChild(createMetaItem('Venue', project.venue));
     }
     // 添加时间
     if (project.time) {
@@ -114,20 +121,99 @@ if (project) {
 
     // 添加视频部分（在项目描述之后）
     if (project.youtubeLink) {
-        const videoSection = document.createElement('div');
+        const existingVideoSection = document.querySelector('.video-wrapper');
+        const videoSection = existingVideoSection || document.createElement('div');
         videoSection.className = 'video-wrapper';
         
         const iframe = document.createElement('iframe');
         iframe.src = project.youtubeLink;
+        iframe.title = `${project.title} video`;
         iframe.setAttribute('frameborder', '0');
         iframe.setAttribute('allowfullscreen', '');
         
         videoSection.appendChild(iframe);
         
         // 将视频插入到项目描述后面
-        const projectContext = document.querySelector('.project-context');
-        projectContext.parentNode.insertBefore(videoSection, projectContext.nextSibling);
+        if (!existingVideoSection) {
+            const projectContext = document.querySelector('.project-context');
+            projectContext.parentNode.insertBefore(videoSection, projectContext.nextSibling);
+        }
     }
+    if (project.pdfLink && project.pdfPageCount > 0) {
+        appendPdfPages(project);
+    }
+}
+
+function appendPdfPages(project) {
+    const section = document.createElement('section');
+    section.className = 'pdf-pages-section';
+    section.setAttribute('aria-label', 'Paper pages');
+    const grid = document.createElement('div');
+    grid.className = 'pdf-pages-grid';
+
+    for (let page = 1; page <= project.pdfPageCount; page++) {
+        const link = document.createElement('a');
+        link.className = 'pdf-page-link';
+        link.href = `${project.pdfLink.split('#')[0]}#page=${page}`;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.setAttribute('aria-label', `Open ${project.title}, PDF page ${page}`);
+        const image = document.createElement('img');
+        image.src = `/projects/${project.name}/pdf-pages/page-${String(page).padStart(2, '0')}.webp`;
+        image.alt = `${project.title}, page ${page}`;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        link.appendChild(image);
+        const caption = document.createElement('span');
+        caption.className = 'pdf-page-number';
+        caption.textContent = `Page ${page}`;
+        link.appendChild(caption);
+        grid.appendChild(link);
+    }
+
+    section.appendChild(grid);
+    const markdown = document.getElementById('markdown-content');
+    markdown.after(section);
+}
+
+// Keep citation actions beside the paper links and BibTeX above the metadata rows.
+function appendBibtexControls(project, linksWrapper, linksContainer) {
+    const bibtex = project.getBibtex();
+    const copyButton = document.createElement('button');
+    copyButton.type = 'button';
+    copyButton.className = 'meta-link citation-copy';
+    copyButton.textContent = 'Copy BibTeX';
+    const status = document.createElement('span');
+    status.className = 'citation-status';
+    status.setAttribute('role', 'status');
+    const pre = document.createElement('pre');
+    pre.className = 'bibtex-box';
+    pre.setAttribute('aria-label', 'BibTeX citation');
+    pre.tabIndex = 0;
+    const code = document.createElement('code');
+    code.textContent = bibtex;
+    pre.appendChild(code);
+    let resetTimer;
+    copyButton.addEventListener('click', async () => {
+        copyButton.disabled = true;
+        clearTimeout(resetTimer);
+        status.textContent = '';
+        try {
+            await navigator.clipboard.writeText(bibtex);
+            copyButton.textContent = 'Copied!';
+            resetTimer = setTimeout(() => {
+                copyButton.textContent = 'Copy BibTeX';
+            }, 30_000);
+        } catch {
+            copyButton.textContent = 'Copy BibTeX';
+            status.textContent = 'Select the BibTeX below to copy manually.';
+        } finally {
+            copyButton.disabled = false;
+        }
+    });
+    linksWrapper.appendChild(copyButton);
+    linksContainer.appendChild(status);
+    linksContainer.appendChild(pre);
 }
 
 // 辅助函数：创建元数据项
@@ -155,6 +241,7 @@ function createMetaLink(label, url) {
     link.href = url;
     link.className = 'meta-link';
     link.target = '_blank';
+    link.rel = 'noopener noreferrer';
     link.textContent = label;
     return link;
 }
